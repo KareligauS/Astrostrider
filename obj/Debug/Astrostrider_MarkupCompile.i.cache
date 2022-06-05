@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Desktop\Astrostrider\Astrostrider\obj\Debug\
+D:\Astrostrider\Astrostrider\obj\Debug\
 Astrostrider
 none
 false
 DEBUG;TRACE
-C:\Users\user\Desktop\Astrostrider\Astrostrider\App.xaml
+D:\Astrostrider\Astrostrider\App.xaml
 10-854918427
 
 32-259773865
 211-1697089558
 Dialogs\SelectionDialog.xaml;MainWindow.xaml;Pages\SunInfoHead.xaml;Pages\SunInfoSub1.xaml;Pages\SunInfoSub2.xaml;Pages\SunIntro.xaml;Pages\SunOutro.xaml;Presentations\InformationPresentation.xaml;Presentations\SelectionPresentation.xaml;Presentations\UnityPresentation.xaml;
 
-False
+True
 

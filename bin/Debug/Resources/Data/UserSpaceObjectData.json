@@ -1,0 +1,23 @@
+[
+  {
+    "Type": 1,
+    "Distance": 432,
+    "IsCreatedByUser": true,
+    "Name": "Чёрная Дыра",
+    "Description": "Чёрная, как борода"
+  },
+  {
+    "Type": 1,
+    "Distance": 456,
+    "IsCreatedByUser": true,
+    "Name": "Ктулху",
+    "Description": "Там вкусно готовят"
+  },
+  {
+    "Type": 2,
+    "Distance": 12342,
+    "IsCreatedByUser": true,
+    "Name": "Альфа",
+    "Description": "Альфа и Бета"
+  }
+]

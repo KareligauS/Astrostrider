@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bw2r/p6dcE3wCASYc6zF0H052wMyLOrj0nIhzTLVclKKrb5OY6TrM3dWC7MqcvrOO66/l3PR4J4xIT8OwhMGbQ==",
+  "dgSpecHash": "dlrTtnO23KlMIMNdiV0iJcC25j4Yu4mKXFP+8enUiPGImQQmfqMdsjTMkVZUAfPTpd8MFHqvgdz1ptQ3Ch8QwA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
+  "projectFilePath": "D:\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.18362.2005\\microsoft.windows.sdk.contracts.10.0.18362.2005.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",

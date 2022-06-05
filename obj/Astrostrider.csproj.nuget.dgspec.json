@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\Astrostrider.csproj": {}
+    "D:\\Astrostrider\\Astrostrider\\Astrostrider.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\Astrostrider.csproj": {
+    "D:\\Astrostrider\\Astrostrider\\Astrostrider.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
+        "projectUniqueName": "D:\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
         "projectName": "Astrostrider",
-        "projectPath": "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
+        "projectPath": "D:\\Astrostrider\\Astrostrider\\Astrostrider.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Desktop\\Astrostrider\\Astrostrider\\obj\\",
+        "outputPath": "D:\\Astrostrider\\Astrostrider\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
