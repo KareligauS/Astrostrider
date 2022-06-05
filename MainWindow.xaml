@@ -1,0 +1,41 @@
+﻿<Window x:Class="Astrostrider.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Astrostrider.ViewModels"
+        xmlns:view="clr-namespace:Astrostrider.Presentations"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        mc:Ignorable="d"
+        Title="Rocket" Height="1080" Width="1920"
+        WindowState="Maximized">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:SelectionPresentationViewModel}">
+            <view:SelectionPresentation MaxHeight="1080" MaxWidth="1920"
+                SpaceObjectSelectionButtonContent="{Binding CurrentSpaceObject.Name, UpdateSourceTrigger=PropertyChanged}"
+                SpaceObjectDescriptionText="{Binding CurrentSpaceObject.Description, UpdateSourceTrigger=PropertyChanged}"
+                SpaceObjectImageSource="{Binding CurrentSpaceObject.ImageSource, UpdateSourceTrigger=PropertyChanged}"
+                SpaceObjectSelectCommand="{Binding SelectSpaceObjectCommand}"
+                SpaceShipSelectionButtonContent="{Binding CurrentSpaceShip.Name, UpdateSourceTrigger=PropertyChanged}"
+                SpaceShipDescriptionText="{Binding CurrentSpaceShip.Description, UpdateSourceTrigger=PropertyChanged}"
+                SpaceShipImageSource="{Binding CurrentSpaceShip.ImageSource, UpdateSourceTrigger=PropertyChanged}"
+                SpaceShipSelectCommand="{Binding SelectSpaceShipCommand}"
+                SwitchPresentationCommand="{Binding SwitchPresentationCommand}"
+                IsSwitchButtonEnabled="{Binding IsSwitchButtonEnabled}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:InformationPresentationViewModel}">
+            <view:InformationPresentation MaxHeight="1080" MaxWidth="1920"
+                BackCommand="{Binding BackCommand}"
+                MenuItemsSource="{Binding MenuItems, UpdateSourceTrigger=PropertyChanged}"
+                NavigationItemsDictionary="{Binding NavigationItemsDictionary, UpdateSourceTrigger=PropertyChanged}"/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:UnityPresentationViewModel}">
+            <view:UnityPresentation MaxHeight="1080" MaxWidth="1920"
+                ExecutableFilePath="{Binding UnityExeFilePath}"
+                SwitchPresentationCommand="{Binding SwitchPresentationCommand}"
+                UnityForm="{Binding Form, Mode=OneWayToSource}"/>
+        </DataTemplate>
+    </Window.Resources>
+    <ContentPresenter Content="{Binding CurrentContentVM}"/>
+</Window>

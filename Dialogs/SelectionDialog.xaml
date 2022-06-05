@@ -1,0 +1,141 @@
+﻿<Window x:Class="Astrostrider.Dialogs.SelectionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:c="clr-namespace:Astrostrider.Classes"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Объекты" Height="650" Width="800">
+
+    <Window.Resources>
+        <c:SpaceObjectGroupKeyConverter x:Key="SpaceObjectGroupKeyConverter"/>
+        <CollectionViewSource
+            x:Key="ObjectsCVS"
+            Source="{Binding FilteredObjects, UpdateSourceTrigger=PropertyChanged}">
+            <CollectionViewSource.GroupDescriptions>
+                <PropertyGroupDescription
+                    PropertyName="Type"
+                    Converter="{StaticResource SpaceObjectGroupKeyConverter}"/>
+            </CollectionViewSource.GroupDescriptions>
+            <CollectionViewSource.SortDescriptions>
+                <cm:SortDescription PropertyName="Type"></cm:SortDescription>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+
+        <DataTemplate x:Key="ObjectListViewTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Ellipse
+                    x:Name="Ellipse"
+                    Grid.RowSpan="2"
+                    Width="32"
+                    Height="32"
+                    Margin="6"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Fill="{DynamicResource SystemControlBackgroundBaseMediumBrush}" />
+                <TextBlock
+                    Grid.Column="1"
+                    Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
+                    Style="{DynamicResource BaseTextBlockStyle}"
+                    Margin="12,6,0,0" />
+                <TextBlock
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="{Binding Description, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}"
+                    Style="{DynamicResource BodyTextBlockStyle}"
+                    Margin="12,0,0,6" />
+            </Grid>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <ui:ListView 
+                Grid.Column="0"
+                Width="600"
+                x:Name="ObjectListView"
+                ItemTemplate="{StaticResource ObjectListViewTemplate}"
+                ItemsSource="{Binding Source={StaticResource ObjectsCVS}, IsAsync=True}"
+                SelectedItem="{Binding SelectedObject, UpdateSourceTrigger=PropertyChanged}"
+                SelectionMode="Single"
+                BorderThickness="1"
+                BorderBrush="{DynamicResource SystemControlForegroundBaseMediumLowBrush}"
+                HorizontalAlignment="Left"
+                VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                VirtualizingPanel.VirtualizationMode="Recycling">
+                    <ui:ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <Border AutomationProperties.Name="{Binding Name, UpdateSourceTrigger=PropertyChanged, Mode=OneTime}">
+                                        <TextBlock
+                                        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged,Mode=OneTime}"
+                                        Style="{DynamicResource TitleTextBlockStyle}" />
+                                    </Border>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ui:ListView.GroupStyle>
+                </ui:ListView>
+                <StackPanel 
+                    Grid.Column="1">
+                    <TextBlock
+                        Margin="8,8,8,4"
+                        Style="{DynamicResource BaseTextBlockStyle}">
+                        Фильтр
+                    </TextBlock>
+                    <TextBox
+                        x:Name="FilterByName"
+                        ui:ControlHelper.Header="Имя"
+                        Margin="8"
+                        HorizontalAlignment="Stretch">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction
+                                Command="{Binding FilterCommand}"
+                                CommandParameter="{Binding ElementName=FilterByName, Path=Text}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBox>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border
+            Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="OpenButton" Command="{Binding CloseCommand}" Grid.Column="0" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background="#6D499A" FontSize="18" FontWeight="Bold">Открыть</Button>
+                <Button x:Name="CancelButton" Command="{Binding CancelCommand}" Grid.Column="2" Width="120" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Background="#6D499A" FontSize="18" FontWeight="Bold">Отменить</Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

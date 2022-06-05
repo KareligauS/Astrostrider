@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Солнце",
+    "Description": "Ближайшая к нашей планете звезда.",
+    "Type": 1,
+    "Distance": 149600000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Луна",
+    "Description": "Естественный спутник земли",
+    "Type": 3,
+    "Distance": 384467,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Меркурий",
+    "Description": "Самая близкая к солнцу планета.\nГод на нем занимает 88 земных дней.",
+    "Type": 2,
+    "Distance": 108000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Венера",
+    "Description": "Когда-то, ландшафт и климат Венеры мог напоминать земной.\nВторая планета.",
+    "Type": 2,
+    "Distance": 45000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Земля",
+    "Description": "(Необходимо заполнить!)",
+    "Type": 2,
+    "Distance": 45000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Марс",
+    "Description": "(Необходимо заполнить!)",
+    "Type": 2,
+    "Distance": 45000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Юпитер",
+    "Description": "Самая большая по весу и объему планета солнечной системы.\nБольшое красное пятно на нем по размерам превышает Землю.",
+    "Type": 2,
+    "Distance": 746000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Сатурн",
+    "Description": "Славится своими кольцами.\nПри этом, количество его спутников насчитывает 82.",
+    "Type": 2,
+    "Distance": 1660000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Уран",
+    "Description": "Седьмая от Солнца планета солнечной системы. (NOTE: Дистанция превышает int)",
+    "Type": 2,
+    "Distance": 3000000,
+    "IsCreatedByUser": false
+  },
+  {
+    "Name": "Нептун",
+    "Description": "Ледяной гигант.\nВосьмая планета от Солнца.",
+    "Type": 2,
+    "Distance": 742000000,
+    "IsCreatedByUser": false
+  }
+]
